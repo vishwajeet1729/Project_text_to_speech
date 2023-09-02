@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speech to text</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        body{
+            display: flex;
+            align-items: center;
+         height: 650px;
+            justify-content: center;
+            background-color: #87a5f8;
+
+        } 
+        .container{
+            max-width: 350px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+        }
+        header{
+            font-size: 18px;
+            color: #333;
+
+            font-weight:500 ;
+            text-align: center;
+        }
+        textarea{
+            width: 90%;
+            cursor: auto;
+            height: 80%;
+            border-radius: 8px;
+            margin: 20px 0;
+            padding: 10px 15px;
+            resize: none;
+            outline:none ;
+            border: 1px solid #aaa;
+        }
+        button{
+            width: 100%;
+            padding: 14px 0;
+            border: none;
+            border-radius: 8px;
+         color: #fff;
+         background-color: #6e93f7;
+         cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      
+<header>text to speech converter</header>
+<textarea placeholder="Enter the text" id="" cols="30" rows="10"></textarea>
+<br>
+<button>Convert text to speech</button>
+
+    </div>
+    <script>
+        const textTospeech=()=>{
+            const sync=window.speechSynthesis;
+            const text=textarea.value;
+             const uttrance=new SpeechSynthesisUtterance(text)
+             sync.speak(uttrance)
+        }
+        const textarea=document.querySelector("textarea");
+        const button=document.querySelector("button")
+        button.addEventListener("click",textTospeech);
+
+    </script>
+</body>
+</html>
